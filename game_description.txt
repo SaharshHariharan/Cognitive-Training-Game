@@ -1,0 +1,70 @@
+The main functionality of the Mechatronic system is to provide the user with a series of small activities 
+that they can do during extended periods of studying as a form of a break. It is essentially an advanced 
+version of the game “Bop-it” requiring the player to do a series of small challenges in a limited amount 
+of time. This will allow students to quickly re-energize and avoid distractions during their breaks. 
+
+Since the system is a game, much of its functionality is to measure and detect inputs from the user. It 
+does so by using touch sensors, a gyroscopic sensor and a colour sensor which are primarily used to verify 
+if the user was able to successfully complete the challenge. The system can be broken down into three 
+components, each being an individual mini-game that synchronize in order to produce the overall system. 
+Each individual component requires its own measurements, inputs and outputs.
+
+Initially the system will prompt the user to enter the number of rounds that they would like to play (with 
+a maximum of four). This feature was developed in order to allow users to play the intended time of their 
+break, while ensuring that they do not play for an unreasonable time (as they cannot play more than four 
+continuous rounds). The user will input this by pressing the right button on the brick and then using the 
+enter button to confirm. The rounds will start by displaying a short “3...2...1…” countdown to notify the 
+user that the round has begun. Then the screen will prompt them to do an activity that they must complete 
+and then as the user is done the activity they will press the enter button. The robot will make sure that 
+the activity was done correctly through the use of the activities respective sensors (elaborated on later)
+ and then prompt the next one within the same round. A timer measuring the overall time taken to do all 
+activities will make sure that the user completes the round in the allocated time. They will then be 
+allocated points for each round and consequent activity they complete.
+
+The first main component is the colour scrambler. It consists of a colour sensor and a motor. The user 
+interacts with the component by placing coloured papers in the correct order presented on the main display 
+of the EV3 in a given period of time. Once the user has placed the coloured papers in their appropriate 
+locations, they will press the enter button to prompt the validation. Validation will occur with the motor 
+rotating the colour sensor attachment clockwise at a low power, using motor encoders to stop at each paper, 
+sensing the colours and making sure that they are in the correct order. If the colour senses a colour that 
+is placed in the work spot, the game will be over. If the colour sensor sense that all the coloured papers 
+have been placed senses that all the coloured papers have been placed in the appropriate spot, then the 
+system will progress onto the next activity.
+
+The second component is the compass navigator. The main parts required for this component are a gyroscopic 
+sensor. The objective of this game is to accurately turn a platform a certain amount of degrees. Within the 
+game the person will be prompted a value of 20, 40, or 60 and a direction to turn the platform. The user 
+will then rotate the platform to the displayed angle and direction. They will be able to do so, as an 
+outline of a compass will be on the platform so that they will be able to visualize the degrees. Once they 
+believe that they have finished the game, they will proceed to press the enter button. The robot will then 
+validate that they have successfully completed the activity, by using input from the gyro sensor and 
+comparing it to the initially outputted value. In order to take into consideration, random error and sensor
+ variation the user will be given a tolerance of five degrees. If the value of the gyro sensor is not within 
+the tolerance, the game will terminate, however if it is within the desired limit, then the game with 
+progress onto the next activity.
+
+The final component of the system is the button game, named “Follow the Leader”. The main parts consist of 
+two touch sensors and two motors. The task is to press down on two moving buttons, one on each side of the 
+robot, a given amount of times (e.g. Left button three times and right button two times). The screen will 
+display a certain combination like the previous one mentioned. The user will then press the buttons in the 
+exact combination and order that they are prompted to do so. They will then press the enter button to signal 
+that they are complete and the timer will end. To validate that the game has been completed successfully, 
+the touch sensor input will verify the user’s actions. If the inputs are the same as the ones displayed on 
+the screen at the beginning of the reactivity the game will progress onto the next activity, however if the 
+inputs do not match, the game will terminate.
+
+Each of these components will be combined in different configuration in order to make a round. Each subsequent 
+round, will be increasingly difficult with more activities to complete with a shorter time allocated to 
+completing the round. The robot will recognize the completion of each activity in their respective methods
+ outlined above. With a successful completion of every activity in the round, the game will progress onto the 
+next round.
+
+There are two instances in which the system will go under shutdown procedure. If a person has successfully 
+completed all the rounds the screen will display “YOU WON” along with their score. The display will stay for 
+10 seconds in order for the user to be able to read their score and then the system will terminate the game. A 
+play again feature was not coded into the shutdown function for the “YOU WIN” condition to make sure students do
+ not go over their intended study time. Another instance in which the system will go under shutdown procedure is 
+if the user does not complete a round in the allocated time, or does not correctly complete an activity (outlined 
+above). The screen will then display “GAME OVER” as well as the user’s current score and then prompt the user if 
+they would still like to continue playing.
+
