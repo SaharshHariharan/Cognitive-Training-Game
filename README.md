@@ -1,0 +1,2 @@
+# Cognitive-Training-Game
+The main functionality of the Mechatronic system is to provide the user with a series of small activities that they can do during extended periods of studying as a form of a break. It is essentially an advanced version of the game “Bop-it” requiring the player to do a series of small challenges in a limited amount of time. This will allow students to quickly re-energize and avoid distractions during their breaks.
